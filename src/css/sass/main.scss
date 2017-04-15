@@ -1,12 +1,17 @@
+$color_white : #fff;
+
 body {
 
 	p {
 		margin-bottom: 50px;
+		color: $color_white;
 	}
 
-	text-align: center;
+	h1 {
+		text-align: center;
+		color: $color_white;
+	}
 	background-color: #1DB0E8;
-	color: #fff;
 }
 
 .file-preview {
@@ -44,4 +49,13 @@ body {
 
 .krajee-default.file-preview-frame .file-thumbnail-footer {
 	height: auto
+}
+
+#map {
+	height: 500px;
+    width: 100%;
+}
+
+.gmnoprint {
+    display: none;
 }
