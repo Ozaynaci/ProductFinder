@@ -345,10 +345,7 @@ $(document).ready(function() {
                                                 url: cstmMarker
                                             },
                                             title: "Hello World"
-                                        }); 
-
-                                        var d = (google.maps.geometry.spherical.computeDistanceBetween(marker, infoWindow) / 1000).toFixed(2);
-                                        console.log(d);   
+                                        });  
 
                                         var infowindow = new google.maps.InfoWindow({
                                           content: "<b>"+jsonLocation[1]+"</b><br><u>Seller: <i>"+jsonLocation[2]+"</u></i><br> $"+jsonLocation[3]

@@ -14,7 +14,7 @@
 
   </head>
   <body class="landing">
-      <h1><i class="fa fa-tags" aria-hidden="true"></i>Product matcher</h1>
+      <h1><i class="fa fa-tags" aria-hidden="true"></i>USED product matcher</h1>
 
     <div class="col-sm-7 col-sm-offset-4 input-group">
       <button class="btn btn-primary" id="txt_btn" type="button">Search</button>

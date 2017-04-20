@@ -17,7 +17,7 @@ body {
 	    color: $color_black;
 	    padding: 20px;
 	    position: relative;
-	    margin: 30px auto;
+	    margin: 15px auto;
 	    width: 35%;
 	}
 
@@ -63,13 +63,13 @@ body {
 }
 
 #map {
-	height: 500px;
+	height: 350px;
     width: 100%;
     margin-bottom: 100px;
 }
 
 .maps {
-    height: 500px;
+    height: 350px;
 }
 
 .gmnoprint {
@@ -109,6 +109,7 @@ i.fa.fa-tags {
 	height: auto;
     width: auto;
     margin-bottom:30px;
+    border-radius: 7px;
 
     .boxTitle {
 	    background: #337ab7;
@@ -118,6 +119,7 @@ i.fa.fa-tags {
 	    font-size: 20px;
 	    text-transform: uppercase;
     	margin: 0;
+    	border-radius: 7px;
 	}
 
 	.boxTitle:before {
@@ -166,9 +168,11 @@ i.fa.fa-tags {
     height: 50px;
     line-height: 35px;
     font-size: 13px;
-    border-radius: 30px;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 50px;
+    position: absolute;
+    right: 335px;
+    top: 0;
 }
 
