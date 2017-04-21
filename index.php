@@ -13,20 +13,20 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   </head>
-  <body class="landing">
-      <h1><i class="fa fa-tags" aria-hidden="true"></i>USED product matcher</h1>
+  <body class="landing" id="landing">
+    <div class="header">
+        <h1>Match with a product seller</h1>
 
-    <div class="col-sm-7 col-sm-offset-4 input-group">
-      <button class="btn btn-primary" id="txt_btn" type="button">Search</button>
-      <input type="text" id="txt_name" class="form-control" placeholder="Paste the image url...">
+      <div class="col-sm-7 col-sm-offset-4 input-group">
+        <button class="btn btn-primary" id="txt_btn" type="button" autocomplete="off" data-loading-text="Searching...">Search</button>
+        <input type="text" id="txt_name" class="form-control" placeholder="Place image url here of apparel..">
+        <a type="button" value="Refresh Page" onClick="window.location.reload()"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+      </div>
     </div>
 
-    <div class="col-md-7 col-md-offset-1 maps">
-      <div id="map"></div>
-    </div>
-    <div class="col-md-3" id="info_box">
-      
-    </div>
+    <div class="col-sm-3 col-sm-offset-4 error"></div>
+    <div class="col-md-7 col-md-offset-1 maps"></div>
+    <div class="col-md-3" id="info_box"></div>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUg2DfJLopuzyKbLXhjc7V_DqYkpzQjEk" type="text/javascript"></script>

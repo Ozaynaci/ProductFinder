@@ -3,7 +3,7 @@ var Clarifai = require('clarifai');
 var cstmMarker = "src/img/marker.png";
 
 // Expiring access token => replace if unauthorized
-var authToken = 'v^1.1#i^1#f^0#r^0#I^3#p^1#t^H4sIAAAAAAAAAOVXb2wURRTvtXdtKhSDKBBC5Fg0Rsjezf67Pwt3etCWVgstXNvgIcLc7izddm933ZlLW9T0UoSIGiRBAomJNgYVASMYJSBoAxqjiIlS+WKiJH4QokiIUUyIinPbo1yrAYTTkHhfLvPmzZvf7/fem50Bucrq2esb1v9a46kqH8iBXLnHw40D1ZW+ORMqyqf5ykCRg2cgd1fO219xeh6GGcOWlyJsWyZG/p6MYWLZNcaYrGPKFsQ6lk2YQVgmipxMLGqS+QCQbccilmIZjL+xNsaIaYGPRAQpCnhR1KLUaF4K2WrFGEWLamJIk4AKhEgEanQe4yxqNDGBJokxPODCLBBZHrTynCxJMscFBF5MMf525GDdMqlLADBxF63srnWKoF4ZKcQYOYQGYeKNifpkc6Kxtm5x67xgUax4QYYkgSSLR48WWCryt0Mji668DXa95WRWURDGTDA+vMPooHLiEpjrgO8qHUVQ5TQJ8RKAWlqFJZGy3nIykFwZR96iq6zmusrIJDrpvZqiVI10J1JIYbSYhmis9ef/lmShoWs6cmJM3fzEQ4mWFibeADE0m9dAtsXRFcpIZVuW1rIIRDmREyIcm1ZD4agIpcJGw9EKMo/ZaYFlqnpeNOxfbJH5iKJGY7URi7ShTs1ms5PQSB5RsZ9wSUMOpPJJHc5ilnSY+byiDBXC7w6vnoGR1YQ4ejpL0EiEsROuRDEG2rauMmMn3VoslE8PjjEdhNhyMNjd3R3oFgKWszrIA8AFly1qSiodKEMrhPrme93116++gNVdKgqiK7Euk16bYumhtUoBmKuZOC9y0ZBQ0H00rPhY618MRZyDozuiVB0SToc5CUmKEoYaDEulaJB4oUaDeRgoDXvZDHS6ELENqCBWoWWWzSBHV2VB0nghoiFWDUU1VoxqGpuW1BDLaQgBhNJpJRr5P/XJtVb6AkOnk6200kpT7qUq9QYLE6Rea6n/LbWkYtmoxTJ0pfc/4pbv9WvkJzhqC3RIbxIZBjXcEFHFzeHKUp1YJUvhP+uW6+OuQ3JzsebEKB/mJYHjbowXvcncVLwUKxPIH8ABB9rEcgIUmm0gHHAQtrIOvXkFmvNf41arC5n0cCOOZRjIab8xFXC+hW8uHfLrMQ3g7YO2PqwIlSZoQUo+SE0rXcz/wjc6OPrBEC9zf1y/5x3Q79lL3xwgCO7mZoGZlRVt3orx07BOUECHWgDrq016EXZQoAv12lB3yis9y6fveX1l0RNlYAWYOvJIqa7gxhW9WMD0yzM+7tYpNVwYiDzgOUniuBSYdXnWy0323r7ug52mNvHJw/LX705Y8diGXJ9xYh2oGXHyeHxl3n5P2YOpzx9+69TZecdvmxFypA7StLv+0FcTT26973DZ9o2RvtjFVNUQe+tLUzYtXIuHvn8htQP03fvpmbKhVzYfa9tWW755+uDJW372fbtKyPwiDV284/GjB3v2fDl4qK5zx/mceHHFwjdffe2J/fvbjttn5j5nbN5dL344uFf2nDtW/XKNMmN79Ommp0J/tFX+sOw9q7Nq3ZaKOaeWrFLxkR8PPD+w9ZmdyxY++kXqu6odR+rgmoNT3/6tZ/0jZ5kq39rz3E8P8L4Dey9sQ6x40MmcOzqpc/wgu+oU3tXhMdtm7vto24uxC5/t2vT+8vGT7590ur1r564tvzc8+433ztmMZ8Pcjz9B++/Zd37jiTcODKfvT4TYKxw8DgAA';
+var authToken = 'v^1.1#i^1#r^0#I^3#f^0#p^1#t^H4sIAAAAAAAAAOVXe2wURRjvtb2aBlCjBMvD9LqgjeLuzeztPXbDXXK0EBoprVx5tOXh3u5su3Rv99yZsz0NsSkJvkMQgybFUAWhKCoS66sJIQoR9Q/BRIyRRPhDJQiJUYIYAzq7d5RrJTyLkHj/XOabb775/X7f983sgO6y8vtXz1n9xzjPLcV93aC72OOBY0B5mXf6rSXFk7xFoMDB09c9rbu0p+ToDCynjLQ0H+G0ZWLk60oZJpZcY5TJ2KZkyVjHkimnEJaIIiXi9XMlngNS2raIpVgG46urjTIC5NVIJABQUozIPNSo1TwXs8mKMqIaEYKiygdCfDgS0RQ6j3EG1ZmYyCaJMjyAYRYILA+beCAJogRELhAMtjC+hcjGumVSFw4wMReu5K61C7BeHKqMMbIJDcLE6uKzEw3xutpZ85pm+AtixfI6JIhMMnj4qMZSkW+hbGTQxbfBrreUyCgKwpjxx3I7DA8qxc+BuQr4rtSRsBoMA0BlFkRFSY6OlLMtOyWTi+NwLLrKaq6rhEyik+ylFKVqJFcgheRH82iIulqf8/dQRjZ0TUd2lJk1M94cb2xkYnNkLJsNj8lso60rlJHKNs6vZREQoQADEcgm1VBYFORgfqNctLzMI3aqsUxVd0TDvnkWmYkoajRSm0CBNtSpwWyw4xpxEBX68ec0FEItTlJzWcyQdtPJK0pRIXzu8NIZGFpNiK0nMwQNRRg54UoUZeR0WleZkZNuLebLpwtHmXZC0pLf39nZyXUGOMtu8/MAQP/i+rkJpR2lZIb6Or2e89cvvYDVXSoKoiuxLpFsmmLporVKAZhtTIwXoBgK5HUfDis20vovQwFn//COGK0O0UQeJiEMIAhDkWRIHI0OieWL1O/gQEk5y6ZkuwORtCEriFVonWVSyNZVKRDU+EBEQ6waEjVWEDWNTQbVEAs1hABCyaQiRv5PjXK5pZ5QrDRqtAxdyY5KwY9asQdstVG2STaBDIMaLrfqL0gSOySvOz2n16+IohMD0yByWuec2uYUK+W3ZHqoOablLupr4q3T+/CmSiolmGOqq7mLjHPpcvhRhbMRtjI2vcO5Budcb7I6kEm7hNiWYSB7IbwmJUbvRL9Bp/kFWSmGTmVcfrMxu8Jj8iprWyY3kHVpj6f1AsyhIPIREA4L4jVxq3Hz2pT9Dw6tK0ushQlSr8MHiH/4cyhW5P5gj2cA9HjepS8q4Af3wKmgqqxkQWnJ2ElYJ4jTZY3DeptJv/JtxHWgbFrW7eIyT+uUHduWFzzA+paCiqEnWHkJHFPwHgNTzs944W13jYNhIPCQB4IIxBYw9fxsKZxQOv7o87/U/z7ArJ+08a2v132R7f9+1xOtYNyQk8fjLaKVUbQyVrk7ddjY/srhLbv3vbjk6E9dp0+UL9q64rmiD894FlVs6524taby9XWnjjxzoOZkhbV9C/+B9HPv2ul3L9s/+ODTvgnf/shM5ufs2Vbcsz3xt/oC2UJOrlEmqsHNZ2oX3ztl896q2vU7SWLZ503ex++z2Gf9s2dVfnWw/eS0E8eVlQf7j1Xc/tE3b09e0fpDeN2xTUzHJ0vCK0/1V1sdAy+rJemJa3btOzD2s0NLq7qbq8uaD/UeeSRENrRtWPrqAzsOaGc/nVHxZvNff7Y/ueol79kx/XcMSGAwUb13cN93FWXjoSe06rUJ74f2bKp6w7vg1K8bd55OBisf/vj4+Ln7d+4S3llzp/TeU52/fZlL3z9lFOv/Gg8AAA==';
 var map = null;
 var infoWindow;
 var searchVal;
@@ -20,46 +20,73 @@ console.log ("Starting...");
 // AJAX calls
 
 $(document).ready(function() {
-    $('#txt_btn').click(function() {
+    $('#txt_btn').on('click', function() {
         var searchVal = $('#txt_name').val();
+        var $btn = $(this).button('loading');
+        // business logic...
+        $btn.button('reset');
 
-        app.models.predict(Clarifai.GENERAL_MODEL, searchVal).then(
+        app.models.predict("e0be3b9d6a454f0493ac3a30784001ff", searchVal).then(
             function(response) {
-                var obj = [
-                    response.outputs[0].data.concepts[0].name,
-                    response.outputs[0].data.concepts[1].name,
-                    response.outputs[0].data.concepts[2].name,
-                    response.outputs[0].data.concepts[3].name
-                ];
+                var obj = response.outputs[0].data.concepts[0].name;
                 if (obj == "no person") {
                     obj = "product"
                     console.log(obj);
                 }
 
-                var rand = obj[Math.floor(Math.random() * obj.length)];
+                //var rand = obj[Math.floor(Math.random() * obj.length)];
 
                 console.log(response.outputs[0].input.data.image.url);
-                objects(rand);
+                objects(obj);
             },
             function(err) {
                 console.error(err);
+                var unAuth = "<b>Bad Request!</b> Please fill in an image url...";
+                var errorMessage = $('<div class="alert alert-danger" role="alert">'+ unAuth +'</div>');
+                errorMessage.appendTo('.error');
             }
         );
-        function objects(rand){
+        function objects(obj){
             $.ajax({
-                url: 'https://api.ebay.com/buy/browse/v1/item_summary/search?q=' + rand + '&limit=10&offset=100&filter=itemLocationCountry:NL&filter=condition:USED',
+                url: 'https://api.ebay.com/buy/browse/v1/item_summary/search?q=' + obj + '&limit=10&offset=100&filter=itemLocationCountry:NL&filter=condition:USED',
                 type: 'GET',
                 dataType: 'JSON',
                 headers: { 
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer '+ authToken
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Authorization': 'Bearer '+ authToken
+                },
+                statusCode: {
+                  400:function() { 
+                    var unAuth = "<b>Bad Request!</b> Please fill in an image url!.";
+                    var errorMessage = $('<div class="alert alert-danger" role="alert">'+ unAuth +'</div>');
+                        errorMessage.appendTo('.error');
+                  },
+                  401:function() { 
+                    var unAuth = "<b>Oh snap!</b> You are unauthorized, please refresh your token.";
+                    var errorMessage = $('<div class="alert alert-danger" role="alert">'+ unAuth +'</div>');
+                        errorMessage.appendTo('.error');
+                  },
+                  500:function() { 
+                    var unAuth = "<b>Oh snap!</b> Internal Server Error.";
+                    var errorMessage = $('<div class="alert alert-danger" role="alert">'+ unAuth +'</div>');
+                        errorMessage.appendTo('.error');
+                  }
                 },
                 success: function(data) {
-                    console.log('object name: ' + rand);
+                    console.log('object name: ' + obj);
                     var json = $.parseJSON(JSON.stringify(data));        
                     console.log(json);
 
+                    var mapId = $('<div id="map"></div>');
+                    mapId.appendTo('.maps');
+
+                    $('#txt_btn').css('background-color','#09A854');
+                    $("#txt_btn").text('Success');
+
+                    function disable(i){
+                        $("#txt_btn"+i).prop("disabled",true);
+                    }
 
                     $.each(json.itemSummaries, function(j, index) {
                         
